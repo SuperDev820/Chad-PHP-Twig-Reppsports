@@ -1,0 +1,631 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+    <script>
+        function gotoNextStep() {
+            $email = document.getElementById("email").value;
+            $firstname = document.getElementById("firstname").value;
+            $lastname = document.getElementById("lastname").value;
+            $phone = document.getElementById("phone").value;
+            $address = document.getElementById("address").value;
+            $apartment = document.getElementById("apartment").value;
+            $city = document.getElementById("city").value;
+            $code = document.getElementById("code").value;
+            $country = document.getElementById("country").value;
+            $state = document.getElementById("state").value;
+    
+            var formData = new FormData(); 
+            formData.append("email", $email);
+            formData.append("firstname", $firstname);
+            formData.append("lastname", $lastname);
+            formData.append("phone", $phone);
+            formData.append("address", $address);
+            formData.append("apartment", $apartment);
+            formData.append("city", $city);
+            formData.append("code", $code);
+            formData.append("country", $country);
+            formData.append("state", $state);
+
+            var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function()
+                {
+                    if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    {
+                        // alert(xmlHttp.responseText);
+                    }
+                }
+                xmlHttp.open("post", "putShippingInfo.php"); 
+                xmlHttp.send(formData); 
+            
+            document.getElementById("tab1").style.display = "none";
+            document.getElementById("tab2").style.display = "block";
+        }
+
+        function priceChange() {
+            console.log("radiochanged!!!");
+            selected_id = document.querySelector('input[name="a"]:checked').id;
+            upsell_price = document.getElementById('price' + selected_id).children[0].outerText;
+            orderbump_element = document.getElementById('orderbump');
+            orderbump_price = orderbump_element.value;
+            price = upsell_price;
+            if(price[0] == "$"){
+                price = price.split("$")[1];
+            }
+            if(orderbump_price[0] == "$"){
+                orderbump_price = orderbump_price.split("$")[1];
+            }
+            if(orderbump_element.checked) {
+                price = parseFloat(price) + parseFloat(orderbump_price);
+            }
+            console.log(upsell_price);
+            console.log(orderbump_price);
+            console.log(price);
+            console.log(document.getElementById("total_price"));
+            document.getElementById("total_price").innerText = "$" + price;
+        }
+    </script>
+    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mt-4">
+                    <div class="eyeview">
+                        <div class="center">
+                            <img class="img-fluid img-size" src="https://www.reppromotions.com/hosted/images/c3/d12ff03c0c11e7bde3f9f67dd572b5/checkout_eye.gif">
+                            <img class="img-fluid img-size" src="https://www.reppromotions.com/hosted/images/d3/9e43703c0f11e782e023068d9967ce/checkout_viewers.gif">
+                            <span>others are viewing this offer right now</span>
+                        </div>
+                    </div>
+                    <div class="boxy mt-2">
+                        <p class="title helvectia" style="font-size:30px">{{checkout_info.header_contents}}</span></p>
+                        <p class="change helvectia color-green">One-Time Order – No Recurring Charges</p>
+                        <p>{{checkout_info.description}}</p>
+                    </div>
+                    <img class="img-fluid" src="{{checkout_info.product_picture}}">
+                    <img style="width: 90%;" class="img-fluid" src="https://reppsports.com/wp-content/uploads/2020/04/checkout_arrow1.jpg">
+                    <img style="width: 90%;" class="mt-2" src="https://reppsports.com/wp-content/uploads/2020/04/checkout_shipping-1-1.png">
+                </div>
+                <div class="col-md-6">
+                    <div class="checkout-form mt-4">
+                        <div class="form-area">
+                            <div id="tab1">
+                                <div class="form-header">
+                                    <div class="shipping">
+                                        <img class="img-fluid" src="/Images/shipping1.JPG">
+                                    </div>
+                                    <div class="biling">
+                                        <img src="/Images/yourInfo1.png">
+                                    </div>
+                                </div>
+                                <div class="returning mt-2 pl-2">
+                                        <p>Returning customer? <a href="#">Click here to login</a></p>
+                                </div>
+                                    <div class="shipinfo pl-2">
+                                    <h2>Shipping Information</h2>
+                                    <p>Fields marked with * are mandatory</p>
+                                </div>
+                                <div class="fields_area pl-2">
+                                    <div class="email">
+                                        <input type="text" id="email" placeholder="Email*">
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-3 mt-2">
+                                    <div class="checkbox">
+                                        <input type="checkbox" name="" placeholder="Email*">
+                                        <span>Create an account?</span>
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="firstname">
+                                        <input type="text" id="firstname" placeholder="First name*">
+                                        <input type="text" id="lastname" placeholder="last name*">
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="phone">
+                                        <input type="text" id="phone" placeholder="Phone*">
+                                        
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="address">
+                                        <input type="text" id="address" placeholder="Street address*">
+                                        
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="appart">
+                                        <input type="text" id="apartment" placeholder="Appartment*">
+                                        
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="firstname">
+                                        <input type="text" id="city" placeholder="Town/City*">
+                                        <input type="text" id="code" placeholder="Zip Code*">
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-2 mt-2">
+                                    <div class="firstname">
+                                        <input type="text" id="country" placeholder="Country*">
+                                        <input type="text" id="state" placeholder="State*">
+                                    </div>
+                                </div>
+                                <div class="fields_area pl-3 mt-2 mb-3">
+                                    <div class="goto">
+                                        <button onclick="gotoNextStep()">{{button_text.tab1}}</button>
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <div id="tab2" style="display:none">
+                                <div class="form-header">
+                                    <div class="shipping">
+                                        <img class="img-fluid" src="/Images/shipping2.png">
+                                    </div>
+                                    <div class="biling">
+                                        <img src="/Images/yourInfo2.png">
+                                    </div>
+                                </div>
+                                <div class="returning mt-2 pl-2">
+                                        <p>Returning customer? <a href="#">Click here to login</a></p>
+                                </div>
+                                <div class="shipinfo pl-2">
+                                    <h5>Order Summary</h5>
+                                </div>
+                                <div>
+                                    <div style="margin-left:10px">
+                                        <label class="checkbox ">
+                                            <input type="checkbox" class="input-checkbox wfacp-form-control" name="billing_same_as_shipping" id="billing_same_as_shipping" value="1"> Use a different billing address&nbsp;<span class="optional">(optional)</span>
+                                        </label>    
+                                    </div>
+                                </div>
+                                <div class="upsell">
+                                    <div class="row">
+                                        <div class="col-md-6">Item </div>
+                                        <div class="col-md-6" style="text-align: right;">Price</div>
+                                    </div>    
+                                    {% for upsell_item in upsell_info %}
+                                    <div class="upsell_item">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                {% if upsell_item.id == 1 %}
+                                                    <input type="radio" id="{{upsell_item.id}}" name="a" checked="checked" onchange="priceChange()">
+                                                {% else %}
+                                                    <input type="radio" id="{{upsell_item.id}}" name="a"  onchange="priceChange()">
+                                                {% endif %}
+                                            </div>
+                                            <div class="product-image col-md-2">
+                                                <img width="50" height="50" src="{{upsell_item.product_image}}" >
+                                            </div>        
+                                            <div class="col-md-7">
+                                                {{upsell_item.product_name}}
+                                            </div>
+                                            <div id="price{{upsell_item.id}}" class="col-md-2">
+                                                <bdi>{{upsell_item.product_price}}</bdi>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                                <div class="order_total row">
+                                    <div class="col-md-9">
+                                        Order Total
+                                    </div>
+                                    <div id="total_price" class="col-md-3">
+                                        ${{upsell_info[0].product_price}}
+                                    </div>
+                                </div>
+                                <div class="payment_method">
+                                    <div>
+                                        <span style="font-size: 20px;font-weight: bold!important;">Payment method</span>
+                                    </div>
+                                    <div>
+                                        <span>All transactions are secure and encrypted. Credit card information is never stored on our servers.</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="wfob_bump_wrapper woocommerce_checkout_order_review_above_payment_gateway" data-time="1604844885">    <div id="wfob_wrap" class="wfob_wrap_start">
+                                    <div class="wfob_wrapper" data-wfob-id="1255490">
+                                        <div class="wfob_bump wfob_clear" data-product-key="wfob_5f84f3c039cd6" data-wfob-id="1255490" cart_key="">
+                                            <div class="wfob_outer">
+                                                <div class="wfob_Box">
+                                                    <div class="wfob_bgBox_table no_table">
+                                                        <div class="wfob_bgBox_tablecell no_table_cell wfob_check_container">
+                        
+                                                            <div class="wfob_order_wrap wfob_content_bottom_wrap">
+                                                                <div class="wfob_bgBox_table_box row">
+                                                                    <div class="wfob_bgBox_cell wfob_img_box col-md-2">
+                                                                        <div class="wfob_checkbox_input_wrap">
+                                                                            <span class="wfob_blink_img_wrap">
+                                                                                <img src="https://reppsports.com/wp-content/plugins/woofunnels-order-bump/assets/img/arrow-blink.gif">
+                                                                            </span>
+                                                                            <span class="wfob_bump_checkbox">
+                                                                                <input type="checkbox" name="wfob_5f84f3c039cd6" id="orderbump" value="{{orderbump.price}}" class="wfob_checkbox wfob_bump_product" onchange="priceChange()">
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="wfob_bgBox_cell col-md-10">
+                                                                        <div class="wfob_content_sec wfob_enable_pointer">
+                                                                            <label for="wfob_5f84f3c039cd6" class="wfob_title wfob_bgBox_cell"> 
+                                                                                <span style="color:#ff0000">Yes, I Want To Try Everything!</span> {{orderbump.name}} 
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <div class="wfob_pro_img_wrap">
+                                                            <img width="148" height="110" src="{{orderbump.image_url}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="">
+                                                        </div>
+
+                                                        <div class="wfob_text_inner"><span style="color:#ff0000"><u><b>ONE TIME OFFER:</b></u></span>{{orderbump.description | raw}}
+                                                            <img src="https://reppsports.com/wp-content/uploads/2020/08/repp-sampler-alt-750x556-1.png" style="width:384px;height:285px"> 
+                                                        </div>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row" style="width: 90%;margin-top: 20px;margin-left: 30px">
+                                    <div class="col-md-5" style="padding-left: 20px;font-size: 20px">Credit Card</div>
+                                    <div class="col-md-7">
+                                        <img src="https://reppsports.com/wp-content/plugins/woocommerce-gateway-paypal-powered-by-braintree/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-visa.svg" alt="visa" class="sv-wc-payment-gateway-icon wc-braintree-credit-card-payment-gateway-icon" width="40" height="25" style="width: 40px; height: 25px;">
+                                        <img src="https://reppsports.com/wp-content/plugins/woocommerce-gateway-paypal-powered-by-braintree/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-mastercard.svg" alt="mastercard" class="sv-wc-payment-gateway-icon wc-braintree-credit-card-payment-gateway-icon" width="40" height="25" style="width: 40px; height: 25px;">
+                                        <img src="https://reppsports.com/wp-content/plugins/woocommerce-gateway-paypal-powered-by-braintree/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-amex.svg" alt="amex" class="sv-wc-payment-gateway-icon wc-braintree-credit-card-payment-gateway-icon" width="40" height="25" style="width: 40px; height: 25px;">
+                                        <img src="https://reppsports.com/wp-content/plugins/woocommerce-gateway-paypal-powered-by-braintree/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/images/card-discover.svg" alt="discover" class="sv-wc-payment-gateway-icon wc-braintree-credit-card-payment-gateway-icon" width="40" height="25" style="width: 40px; height: 25px;">
+                                    </div>
+                                </div>
+
+                                <div class="payment_box">
+                                    <p style="margin-left: 10px">Pay securely using your credit card.</p>
+                                    <div style="margin-left: 10px">
+                                        <label>Card Number *</label>
+                                    </div>
+                                    <div class="fields_area pl-2">
+                                        <div class="email">
+                                            <input type="text" name="" placeholder="•••• •••• •••• ••••">
+                                        </div>
+                                    </div>
+                                    <div class="fields_area pl-2 mt-2">
+                                        <div class="row">
+                                            <div class="col-md-6"><label>Expiration (MMYY) *</label></div>
+                                            <div class="col-md-6"><label>Card Security Code *</label></div>
+                                        </div>
+                                        <div class="firstname">
+                                            <input type="text" name="" placeholder="MM/YY">
+                                            <input type="text" name="" placeholder="CSC">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fields_area pl-3 mt-2 mb-3">
+                                <div class="goto">
+                                    <button>{{button_text.tab2}}</button>
+                                </div>
+                            </div>
+                            <div class="wfacp-payment-dec">
+                                We Respect Your Privacy &amp; Information.
+                                This is a one-time payment for shipping &amp; you will NOT be charged on a recurring basis. 
+                            </div>
+                        </div>
+                        <div class="checkfooter">
+                            <img class="img-fluid mt-3" src="/Images/checkfooter.PNG">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="display:flex;justify-content: center;margin-top:20px;font-size: 35px;">
+                    Frequently Asked Questions
+                </div>
+                {% for faq_item in checkout_info.faq %}
+                    <div class="col-md-12" style="font-size: 20px;letter-spacing: 1px;margin-top:10px">
+                        {{faq_item.question}}
+                    </div>
+                    <div class="col-md-12" style="font-size: 15px;letter-spacing: 1px;margin-top:10px">
+                        {{faq_item.answer}}
+                    </div>
+                    <div class="col-md-12" style="background: black;height:1px;margin-top:15px"></div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="img-fluid" src="{{checkout_info.user_review_picture}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    
+                </div>
+                <div class="col-md-3 mt-5">
+                    <button class="samplebtn"><i class="fas fa-arrow-up"></i> <a href="">GET MY FREE SAMPLE</a></button>
+                </div>
+                <div class="col-md-4">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .upsell {
+            width: 85%;
+            margin-left: 35px;
+        }
+        .upsell_item {
+            margin-top: 15px; 
+        }
+        .order_total {
+            width: 90%;
+            height: 50px;
+            align-items: center;
+            margin-left: 20px;
+            margin-top: 30px;
+            font-size: 20px;
+            background-color: white;
+            border-color: #dedede;
+            border: 1px solid #dedede;
+        }
+        .payment_method {
+            width: 90%;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .orderbump {
+            border: 3px dashed #9e9e9e;
+            width: 90%;
+            margin-left: 20px;
+        }
+        body .woocommerce form .wfob_bump_qty_wrap input[type="number"]::-webkit-inner-spin-button,
+        body .woocommerce form .wfob_bump_qty_wrap input[type="number"]::-webkit-outer-spin-button {
+            opacity: 1;
+        }
+
+        .woocommerce form .wfob_bump_qty_wrap label {
+            font-size: 14px;
+            padding-right: 4px;
+        }
+
+        .wfob_bump_qty_wrap {
+            margin: 6px 0;
+        }
+
+        .woocommerce form .wfob_bump_qty_wrap input[type="number"] {
+            max-width: 50px;
+            border: 1px solid #ababab;
+            padding: 4px;
+            color: #737373;
+            height: auto;
+        }
+
+        /* varient styling */
+        body .wfob_selected_attributes .wfob_pro_attr_single .wfob_attribute_id {
+            text-transform: capitalize;
+        }
+
+        body .wfob_selected_attributes {
+            margin: 5px 0 5px;
+        }
+
+        span.wfob_subs_wrap {
+            display: inline-block;
+            margin: 12px 0;
+        }
+
+        body .wfob_selected_attributes:after, .wfob_selected_attributes:before {
+            content: '';
+            display: block;
+        }
+
+        body .wfob_selected_attributes .wfob_pro_attr_single {
+            font-weight: normal;
+            font-size: 13px;
+            float: left;
+            padding-right: 12px;
+            font-style: italic;
+            color: #737373;
+            position: relative;
+            margin-right: 6px;
+
+        }
+
+        body .wfob_selected_attributes:after {
+            clear: both;
+        }
+
+        body span.wfob_attribute_value {
+
+            color: #737373;
+        }
+
+        body .wfob_product_sec .wfob_attribute_value.wfob_attr_value_not_available {
+            color: #dd7575;
+        }
+
+        body .wfob_main_form .wfob_selected_attributes .wfob_pro_attr_single > span {
+            font-size: 13px;
+        }
+
+        body .wfob_selected_attributes .wfob_pro_attr_single span:last-child {
+            width: 5px;
+            height: 5px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            background: #c7c7c7;
+            border-radius: 50%;
+            margin-top: -2.5px;
+            font-size: 0;
+        }
+
+        body .wfob_selected_attributes .wfob_pro_attr_single:last-child {
+            margin: 0;
+            padding: 0;
+        }
+
+
+            body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump {
+            border: 3px dashed #9e9e9e;
+        }
+
+        
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump {
+            background: #FFFFFF;
+            padding: 1px;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table {
+            background: #ffff99;
+            padding: 10px;
+            font-size: 16px;
+
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table .wfob_title, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table .wfob_title {
+            color: #009900;
+            margin-bottom: 0;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table .wfob_title:hover, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table .wfob_title:hover {
+            color: #7ab061;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_bgBox_table:hover {
+            background-color: #ffff56;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_price_container {
+            color: #333333;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox {
+            color: #2F2F2F;
+            font-size: 13px;
+            padding: 10px;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_selected_attributes .wfob_pro_attr_single,
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_selected_attributes .wfob_attribute_value {
+            color: #2F2F2F;
+
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox p, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox p {
+            color: #2F2F2F    }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_pro_txt_wrap a, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_pro_txt_wrap a {
+            color: #e20707    }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_pro_txt_wrap a, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_pro_txt_wrap a {
+            color: #e20707    }
+
+            body #wfob_wrap .wfob_wrapper .wfob_outer .wfob_order_wrap .wfob_error_message {
+            color: #E20707;
+        }
+
+        
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_qv-button:hover {
+            color: #e15353;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_contentBox .wfob_pro_img_wrap {
+            border: 1px solid #ECECEC;
+            text-align: center;
+        }
+
+        
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_price_container span.woocommerce-Price-amount.amount {
+            font-size: 14px;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_price_container span.woocommerce-Price-amount.amount, #wfacp-e-form .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_price_container span.woocommerce-Price-amount.amount {
+            font-size: 14px;
+        }
+
+        body #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] .wfob_bump .wfob_price_container .wfob_price ins {
+            color: #333333;
+        }
+
+        body #wfob_wrap .wfob_price ins {
+            background: transparent;
+        }
+
+        .wfob_checkbox_input_wrap {
+            margin-top: 7px;
+        }
+
+        .wfob_bgBox_cell {
+            margin-left: -10px;
+        }
+
+        .wfacp-form-control {
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            body .wfob_selected_attributes {
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #wfob_wrap .wfob_wrapper[data-wfob-id='1255490'] {
+            margin: 0 auto;
+            }
+        }
+
+        .wfob_error_message a {
+            display: none
+        }
+
+        #orderbump {
+            cursor: pointer;
+        }
+
+        .wfob_pro_img_wrap {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .wfacp-payment-dec {
+            width: 80%;
+            margin-left: 30px;
+            text-align: center;
+        }
+
+        .wfob_bump_wrapper {
+            width: 92%;
+            margin-left: 20px;
+        }
+
+        .wfob_text_inner {
+            width: 95%;
+            margin-left: 10px;
+        }
+    </style>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

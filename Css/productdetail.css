@@ -1,0 +1,210 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/bdhanoverblack.ttf);
+}
+*{
+	font-family: myFirstFont;
+}
+.pro-detail{
+	text-transform: uppercase;
+	background: #222222;
+	
+	height:66px;
+	font-size: 30px;
+	text-align: center;
+	color: #fff;
+	line-height: 66px;
+}
+.product-summary{
+	
+}
+.product-des{
+	padding-left: 20px;
+	padding-top: 20px;
+}
+.product-des>ul>li{
+	font-size: 18px;
+	font-family:myFirstFont ;
+}
+.customer-review{
+	font-size: 14px;
+}
+.fontstyle{
+	text-transform: uppercase;
+	font-family: myFirstFont;
+}
+.font-size{
+	font-size: 20px;
+}
+.btn-radius{
+	border-radius: 0px;
+}
+.bg-yellow{
+	background-color:#fff200;
+}
+.bg-black{
+	background-color:#222222;
+}
+.bg-black2{
+	background-color: #232323;
+}
+.bg-blackish{
+	background-color: #1d1d1d;
+}
+.color-y{
+	color: #fff200;
+}
+.color-w{
+	color:white;
+}
+.color-b{
+	color: #9999a6;
+}
+.color-bb{
+	color: #3a3a3a;
+}
+.color-blue{
+	color: #2352a6;
+}
+.textstyle{
+	text-align: center;
+}
+.dropdown-width{
+	width: 100%;
+}
+.col-display{
+	display: flex;
+}
+#front{
+	height: 450px;
+	width: 100%;
+	max-width: 500px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.picker-image{
+	width: 100px;
+	margin-right: 20px;
+}
+.picker-image > img {
+    margin-bottom: 10px;
+}
+.display-picker{
+		display: none;
+}
+.review_area{
+	width: 100%;
+	max-width: 575.89px;
+	height: auto;
+	
+}
+.review_area>span{
+	font-size: 11px;
+	font-family: Arial;
+}
+.review_area>button{
+	width: 48px;
+	height: 20px;
+	font-size: 11px;
+}
+.seanflim{
+	font-size: 14px;
+	font-family: roboto;
+	color: #777777;
+
+}
+.rating_p>p{
+	font-size: 14px;
+	font-family: roboto;
+	font-weight: bold;
+}
+.Add_Review_Form{
+	width: 100%;
+	max-width: 484.09px;
+	height: auto;
+	border: 2px solid #efefef;
+}
+.Add_Head>h3{
+	font-size: 15px;
+	color: #000;
+	font-family: BD-han;
+}
+.Add_Head>p{
+	font-size: 14px;
+	color: #000;
+	font-family: roboto;
+}
+.Your_Rating>h3
+{
+	font-size: 18px;
+	color: #000;
+	font-family: BD-han;
+}
+.Your_Rating>span
+{
+	font-size: 14px;
+}
+.Your_Review>h3{
+	font-size: 14px;
+	color: #000;
+	font-family: BD-han;
+}
+.Your_Review>form>input{
+	width: 100%;
+	max-width: 252px;
+	height: 40px;
+}
+.check_ipt>input{
+	height: 13px;
+	width: 13px;
+}
+.last_part>p,span{
+	font-size: 14px;
+	font-family: roboto;
+	font-weight: bold;
+}
+.last_part>input{
+	width: 100%;
+	max-width: 100px;
+	height: 40px;
+}
+.Submit_Button>button{
+	width: 139.6px;
+	height: 38px;
+	color: white;
+	font-family: BD-han;
+	background-color: #3a3a3a;
+	border: none;
+	font-size: 18px;
+}
+
+ol.flex-control-nav.flex-control-thumbs::-webkit-scrollbar {
+	overflow: hidden !important;
+}
+
+ol.flex-control-nav.flex-control-thumbs {
+	width: 700px;
+}
+@media screen and (max-width: 620px) {
+  	.pro-detail{
+		width: 100%;}
+				.col-display{
+					display: block;}
+					
+				
+				.display-picker{
+					display: block;
+					padding-top: 20px;
+					padding-bottom: 20px;
+					display: flex;
+					flex-direction: row;
+					width: 23%;
+				}
+				.picker-image{
+					display: none;
+				}
+				#front{
+					height: 450px;
+					width: 100%;
+					}	
+}

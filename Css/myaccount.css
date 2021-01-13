@@ -1,0 +1,91 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(../Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(../Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(../Fonts/HelveticaNeueMedium.ttf);
+}
+@font-face {
+  font-family: opensan;
+  src: url(../Fonts/open-sans.light.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(../Fonts/roboto.thin.ttf);
+}
+@font-face {
+  font-family: robotoregular;
+  src: url(./Fonts/roboto.regular.ttf);
+}
+@font-face {
+  font-family: BD-han;
+  src: url(../Fonts/bdhanover.ttf);
+}
+.myreppsport{
+  font-family:BD-han;
+  font-size:35px;
+   color: #333333;
+}
+.Login_Font,.Register_Font{
+  font-family: helveticaNue;
+  font-size:16.2px;
+  color: #222222;  
+}
+.login_form{
+  width: 100%;
+  max-width: 595.19px;
+  height: 310.39px;
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 5px;
+}
+.form-grp>label{
+  font-size: 9px;
+  color: #333333;
+  font-family: roboto;
+  font-weight: bold;
+}
+.form-grp>input{
+  width: 100%;
+  max-width: 547.19px;
+  height: 40px;
+  border: 1px solid #eaeaea; 
+}
+.form-grp>.checkboxy{
+  height: 13px;
+  width: 13px;
+}
+.form-grp>button{
+  width: 100%;
+  max-width: 120.67px;
+  height: 34px;
+  color: white;
+  background-color: #1D1D1D;
+  border: none;
+  font-family: BD-han;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+.form-grp>a{
+  font-family: BD-han;
+  font-size: 14px;
+  color: #23527c;
+  text-decoration: none;
+}
+.form-grp>a:hover{
+  text-decoration: underline;
+}
+.form-grp>p{
+  font-size: 14px;
+  font-family: roboto;
+  font-weight: 700;
+}

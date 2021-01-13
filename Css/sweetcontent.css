@@ -1,0 +1,373 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(./Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(./Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(./Fonts/HelveticaNeueMedium.ttf);
+}
+.mainheading{
+	height: 100px;
+	width: 100%;
+	max-width: 1120px;
+	margin:auto;
+	
+}
+.mainheading>h1{
+	text-align: center;
+	font-family: myFirstFont;
+	font-size: 50px;
+	color:#0c3583;
+
+}
+.secondheading{
+	height: 100px;
+	width: 100%;
+	max-width: 1120px;
+	margin:auto;
+	
+}
+.secondheading>h1{
+	text-align: center;
+	font-family: myFirstFont;
+	font-size: 50px;
+	color:#0c3583;
+
+}
+.logo{
+	height: 123.19px;
+	width: 100%;
+	max-width: 1120px;
+	margin:auto;
+	
+}
+.logo{
+	height: 123.19px;
+	width: 123.19px;
+}
+.bajalime{
+	color: #31ece2;
+	font-size: 24px;
+	font-weight: 300;
+	font-family: oswaldregular;
+	text-decoration: none;
+}
+.sample{
+	text-decoration: none;
+	font-size: 14px;
+	color: #000000;
+	font-family: oswaldregular;
+}
+.galaxy{
+	color: #f56a82;
+	font-size: 24px;
+	font-weight: 300;
+	font-family: oswaldregular;
+	text-decoration: none;
+}
+.appolo{
+	color: #e51518;
+	font-size: 24px;
+	font-weight: 300;
+	font-family: oswaldregular;
+	text-decoration: none;
+}
+.sour{
+	color: #2bc952;
+	font-size: 24px;
+	font-weight: 300;
+	font-family: oswaldregular;
+	text-decoration: none;
+}
+.samplebtn{
+	width:100%;
+	max-width: 1120px;
+	height: 70px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.samplebtn>button{
+	width: 250.64px;
+	height: 56px;
+	background: #ff0050;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px 1px;
+	padding: 14px 35px;
+}
+.samplebtn>button>a{
+	text-decoration: none;
+	font-size: 20px;
+	color:white;
+	font-family: oswaldregular;
+}
+.find{
+	width: 100%;
+	max-width: 1120px;
+	height: 120px;
+	margin: auto;
+	text-align: center;
+}
+.find>h2{
+	color: #0c3583;
+	font-size: 50px;
+	font-family: myFirstFont;
+}
+.morecaf{
+	width: 100%;
+	height: 180;
+}
+.morecaf>h1{
+	font-size: 50px;
+	font-family: myFirstFont;
+	color: #0c3583; 
+}
+.eachcan>p{
+	font-size: 18px;
+	color: black;
+	font-family: helvetica;
+}
+.makeraze>h1{
+	font-size: 50px;
+	font-family: myFirstFont;
+	color: #0c3583; 
+}
+.makeraze{
+	width: 100%;
+	max-width: 500px;
+	height: 180;
+	margin-top: 15%;
+}
+.join>button{
+	width: 250.64px;
+	height: 56px;
+	background: #ff0050;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px 1px;
+	padding: 14px 35px;
+}
+.join>button>a{
+	text-decoration: none;
+	font-size: 20px;
+	color:white;
+	font-family: oswaldregular;
+}
+.join>button>a:hover{
+	text-decoration: underline;
+}
+#parallax-world-of-ugg{
+	background: url(https://reppsports.com/wp-content/uploads/2019/12/refesh_bg2-1.jpg);
+	height:800px;
+	width: 100%;
+}
+.powered{
+	width: 100%;
+	max-width: 540px;
+	height: 120px;
+}
+.powered>h1{
+	font-size: 50px;
+	font-family: myFirstFont;
+	color: #fff; 
+}
+.checklist>h3{
+	font-family: oswaldregular;
+	font-size: 20px;
+	color: #fff81a;
+}
+.checklist>p{
+	font-family: oswaldregular;
+	font-size:20px;
+	color:white;
+}
+.overlay{
+	background: url(https://reppsports.com/wp-content/uploads/2020/08/otg-refresh-desk-new-1200x616-1.png);
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 800px;
+}
+.sec{
+	background: url(https://reppsports.com/wp-content/uploads/2019/12/refesh_bg2-1.jpg);
+	width: 100%;
+	height: 200px;
+}
+.partition{
+	height: 150px;
+	width: 100%;
+	max-width: 900px;
+	margin: auto;
+	display: flex;
+}
+.sugar{
+	width:100%;
+	max-width: 224px;
+	height: 154px;
+	text-align: center;
+}
+.sugar>h2{
+	font-size: 69px;
+	color: #fff;
+	font-family: helveticaNue;
+}
+.sugar>p{
+	font-size: 26px;
+	color: #fff800;
+	font-family: myFirstFont;
+}
+.seewhat{
+	width: 100%;
+	width: 1120px;
+	height: 80px;
+	text-align: center;
+	margin:auto;
+}
+.seewhat>h1{
+	color:#0c3583;
+	font-family: myFirstFont;
+	font-size: 50px;
+
+
+}
+.findraze{
+	width: 100%;
+	max-width: 1120px;
+	text-align: center;
+	margin:auto;
+}
+.findraze>h1{
+	color:#0c3583;
+	font-size: 50px;
+	font-family: myFirstFont;
+}
+.nearyou{
+	width: 100%;
+	max-width: 1120px;
+	height: 100px;
+	text-align: center;
+	margin:auto;
+}
+.nearyou>h1{
+	color:#0c3583;
+	font-size: 37px;
+	font-family: myFirstFont;
+}
+.sendsample{
+	width:100%;
+	max-width: 1120px;
+	height: 70px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.sendsample>button{
+	width: 260.64px;
+	height: 56px;
+	background: #ff0050;
+	border: none;
+	border-radius: 5px;
+	padding: 14px 35px;
+}
+.sendsample>button>a{
+	text-decoration: none;
+	font-size: 20px;
+	color:white;
+	font-family: oswaldregular;
+}
+.col-md-12>h2{
+	color: #0c3583;
+	font-size: 20px;
+	font-family: oswaldregular;
+}
+.col-md-12>p{
+	color: #000;
+	font-size: 20px;
+	font-family: oswaldregular;
+
+}
+.sendsample{
+	width:100%;
+	max-width: 1120px;
+	height: 70px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.sendsample>button{
+	width: 260.64px;
+	height: 56px;
+	background: #ff0050;
+	border: none;
+	border-radius: 5px;
+	padding: 14px 35px;
+}
+.sendsample>button>a{
+	text-decoration: none;
+	font-size: 20px;
+	color:white;
+	font-family: oswaldregular;
+}
+.top{
+	width:100%;
+	max-width: 1120px;
+	height: 40px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+.top>span{
+	font-size: 50px;
+}
+.top>h3{
+	font-size: 20px;
+	color:black;
+	font-family: oswaldregular;
+}
+@media screen and (max-width: 620px) {
+  	.mainheading{
+	height: auto;
+	width: 100%;
+	max-width: 1120px;
+	margin:auto;
+	}
+	.secondheading{
+	height: auto;
+	width: 100%;
+	max-width: 1120px;
+	margin:auto;
+	}
+	.partition{
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20%;
+}
+.sec{
+	background: url(https://reppsports.com/wp-content/uploads/2019/12/refesh_bg2-1.jpg);
+	width: 100%;
+	height: auto;
+}
+.overlay{
+	display: none;
+}
+#parallax-world-of-ugg{
+	background: url(https://reppsports.com/wp-content/uploads/2019/12/refesh_bg2-1.jpg);
+	height:1500px;
+	width: 100%;
+}
+.seewhat{
+	height: auto;
+}
+}
+

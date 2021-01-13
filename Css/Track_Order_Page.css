@@ -1,0 +1,135 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(./Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(./Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(../Fonts/HelveticaNeueMedium.ttf);
+}
+@font-face {
+  font-family: opensan;
+  src: url(./Fonts/open-sans.light.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(./Fonts/roboto.thin.ttf);
+}
+@font-face {
+  font-family: robotoregular;
+  src: url(./Fonts/roboto.regular.ttf);
+}
+@font-face {
+  font-family: BD-han;
+  src: url(./Fonts/bdhanover.ttf);
+}
+.TrackOrderFrom{
+	width: 100%;
+	max-width: 1140;
+	height: 338.56px;
+	border: 2px solid #000;
+	border-radius: 4px;
+	box-shadow: 1px 1px 10px 1px;
+}
+.TrackOrderFrom>h1{
+	font-family: BD-han;
+	font-size: 32px;
+	color: #1d1d1d;
+}
+.TrackOrderFrom>p{
+	font-family: roboto;
+	font-size: 14px;
+	color:#333333;
+	font-weight: bold;
+}
+.input-grp{
+	height: 50px;
+}
+.input-grp>input{
+	width: 182px;
+	height: 43px;
+	padding: 10.2px;
+	font-style: 14px;
+	font-family: robotoregular;
+	background-color: #fafafa;
+	border: 1px solid #eaeaea;
+}
+.input-grp>label{
+	font-family: robotoregular;
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold;
+}
+.Order_track_button{
+	width: 100%;
+	max-width: 111.32px;
+	height: 31px;
+	background-color: #3a3a3a;
+	border: none;
+	border-radius: 2px;
+	color: #FFF;
+	font-size: 13.25px;
+	font-family: BD-han;
+	text-transform: uppercase;
+	margin-top: 1%;
+}
+.Question_Form>h1{
+	font-family: BD-han;
+	font-size: 32px;
+	color: #1d1d1d;
+}
+.Question_Form>h2{
+	font-family: BD-han;
+	font-size: 25px;
+	color: #1d1d1d;
+}
+.form-group>label{
+	font-size: 16px;
+	font-family: helveticaNue;
+	color: black;
+	font-weight: bold;
+}
+.form-group>input{
+	width: 100%;
+	max-width: 1120px;
+	height: 45.5px;
+	padding: 11.5px;
+	font-size: 16px;
+	font-family: helveticaNue;
+	border: 1px solid #222222;
+}
+.form-group>textarea{
+	width: 100%;
+	max-width: 1120px;
+	height: 45.5px;
+	padding: 11.5px;
+	font-size: 16px;
+	font-family: helveticaNue;
+	border: 1px solid #222222;
+}
+.form-group>button{
+	width: 100%;
+	max-width: 272.5px;
+	height: 59px;
+	font-size: 20px;
+	font-family: myFirstFont;
+	background-color: #fff100;
+	border: none;
+	border-radius: 2px; 
+	font-family: oswaldregular;
+}
+.form-group>button:hover{
+	color: #fff;
+}
+@media screen and (max-width: 620px) {
+	.form-group>input{
+
+}
+}

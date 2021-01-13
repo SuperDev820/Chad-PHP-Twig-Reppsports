@@ -1,0 +1,219 @@
+.header{
+	width: 100%;
+	height: 14%;
+	background: url(https://reppsports.com/wp-content/uploads/2020/01/carbon_fibre.png);
+}
+.title{
+	font-size: 14px;
+}
+.change{
+	font-size: 14px;
+	color: #06C011;
+}
+.color-border{
+	background: #bcbcbc;
+	height: 800px;
+	width: 90%;
+	border-radius: 5px;
+}
+.aaa{
+	margin-top: 10%;
+	padding-top: 1%;
+	height: 200px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	background: #333333;
+
+}
+.eyeview{
+	width: 100%;
+	max-width: 627px;
+	height: 30.52px;
+	border:2px solid red;
+	box-shadow: 0px 1px 1px black;
+	display: flex;
+}
+.img-size{
+	width: 31px;
+	height: 17px;
+	
+}
+.center{
+	width: 100%;
+	height: 30.52px;
+	margin: auto;
+
+}
+.checkout-form{
+	width: 100%;
+	max-width: 485.5px;
+	border-radius: 10px;
+	background-color: #bcbcbc;
+	border:1px solid #75787c;
+}
+.form-area{
+	background-color: #f2f2f2;
+	width: 100%;
+	max-width: 444px;
+	margin:auto;
+	margin-top: 5%;
+}
+.form-header{
+	display: flex;
+}
+.shipping{
+	width: 100%;
+	max-width: 222px;
+	height: 97px;
+	background-color: #0e8dc7;
+	border-bottom: 3px solid white;
+}
+.biling{
+	width: 100%;
+	max-width: 222px;
+	height: 97px;
+	
+	border-bottom: 3px solid grey;
+}
+.returning>p{
+	color: #7b91b5;
+	font-size: 14px;
+}
+.returning>p>a{
+	color: #7b91b5;
+	font-size: 14px;
+}
+.shipinfo>h5{
+	color: black;
+	font-size: 15px;
+	font-family: opensan;
+	font-weight: bold;
+}
+.shipinfo>p{
+	font-size: 13px;
+	font-family: opensan;
+	color: #666666;
+}
+.email>input{
+	width: 100%;
+	max-width: 428px;
+	height: 52px;
+	border:1px solid #c3c0c0;
+	padding: 5px 5px 5px 12px;
+	border-radius: 5px;
+}
+.checkbox>input{
+	height:16px;
+	width: 16px;
+	border: none;
+}
+.checkbox>span{
+	font-family: opensan;
+	font-size: 14px;
+	color: #737373;
+}
+.firstname>input{
+	width: 180px;
+	max-width: 210px;
+	height: 52px;
+	border:1px solid #c3c0c0;
+	padding: 5px 5px 5px 12px;
+	border-radius: 5px;
+}
+.phone>input{
+	width: 100%;
+	max-width: 428px;
+	height: 52px;
+	border:1px solid #c3c0c0;
+	padding: 5px 5px 5px 12px;
+	border-radius: 5px;
+}
+.address>input{
+	width: 100%;
+	max-width: 428px;
+	height: 52px;
+	border:1px solid #c3c0c0;
+	padding: 5px 5px 5px 12px;
+	border-radius: 5px;
+}
+.appart>input{
+	width: 100%;
+	max-width: 428px;
+	height: 52px;
+	border:1px solid #c3c0c0;
+	padding: 5px 5px 5px 12px;
+	border-radius: 5px;
+}
+.goto>button{
+	width: 100%;
+	max-width: 412px;
+	height: 77px;
+	background: #2b9cec;
+	border: none;
+	font-family: opensan;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+	border-radius:5px;
+}
+.samplebtn{
+	width: 260.64px;
+	height: 56px;
+	background: #0c9dda;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px 1px;
+	padding: 14px 35px;
+}
+.samplebtn>a{
+	text-decoration: none;
+	font-size: 20px;
+	color:white;
+	font-family: oswaldregular;
+}
+.samplebtn>i{
+	font-size: 25px;
+	color: white;
+}
+@media screen and (max-width: 620px) {
+	
+	.aaa{
+	margin-top: 10%;
+	padding-top: 1%;
+	height: auto;
+	width: 100%;
+}  
+.header{
+	width: 100%;
+	height: auto;
+}	
+.email>input{
+	width: 100%;
+
+}
+
+
+.firstname>input{
+	width: 100%;
+
+}
+.phone>input{
+	width: 100%;
+
+}
+.address>input{
+	width: 100%;
+
+}
+.appart>input{
+	width: 100%;
+}
+.eyeview{
+	height: auto;
+}
+.center{
+	height: auto;
+}
+
+}

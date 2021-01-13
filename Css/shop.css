@@ -1,0 +1,76 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/bdhanoverblack.ttf);
+}
+
+.product-box{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 300px;
+	align-items: center;
+	margin-top: 50px;
+}
+.pro-img>img{
+	width: 100%;
+	max-width: 261.44px;
+	height: 304.83px;
+}
+.pro-title{
+	height: auto;
+	
+}
+.pro-title>p{
+	font-size: 25px;
+	font-family: myFirstFont; 
+	text-align: center;
+
+}
+.pro-rating{
+	height: 30px;
+	line-height: 30px;
+}
+.pro-price{
+	height: 50px;
+	line-height: 50px;
+}
+.pro-btn>button{
+	width: 227.84px;
+	height: 72px;
+	font-family: myFirstFont;
+	font-size: 20px;
+	color: white;
+	background: #1d1d1d;
+	border:none;
+	text-transform: uppercase;
+}
+.select-box{
+	width: 25%;
+	margin-left: auto;
+	margin-top: 2%;
+}
+.select-box>select{
+	width: 192px;
+	height: 34px;
+	font-weight: normal;
+	font-size: 14px;
+}
+@media screen and (max-width: 620px) {
+  .product-box{
+  	width: 100%;
+  	max-width: 500px;
+}
+.pro-btn>button{
+	width: 316.31px;
+	height: 40px;
+	font-family: myFirstFont;
+	font-size: 16px;
+	color: white;
+	background: #1d1d1d;
+	border:none;
+	text-transform: uppercase;
+}
+.select-box{
+	display: none;
+}
+}

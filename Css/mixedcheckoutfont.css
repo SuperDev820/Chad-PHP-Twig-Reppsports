@@ -1,0 +1,30 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(./Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(./Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(./Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(./Fonts/HelveticaNeueMedium.ttf);
+}
+@font-face {
+  font-family: opensan;
+  src: url(./Fonts/open-sans.light.ttf);
+}
+.helvectia{
+	font-family: helvetica;
+	font-weight: bold;
+}
+.color-red{
+	color: red;
+}
+.color-green{
+	color: #06c011;
+}

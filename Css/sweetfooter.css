@@ -1,0 +1,38 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(../Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(../Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(../Fonts/HelveticaNeueMedium.ttf);
+}
+@font-face {
+  font-family: opensan;
+  src: url(../Fonts/open-sans.light.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(../Fonts/roboto.thin.ttf);
+}
+footer{
+	width: 100%;
+	height: 226px;
+	background-color: #1d1d1d;
+}
+@media screen and (max-width: 620px) {
+	
+	footer{
+	width: 100%;
+	height: auto;
+	background-color: #1d1d1d;
+}
+	
+}  

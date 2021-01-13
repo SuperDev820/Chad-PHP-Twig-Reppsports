@@ -1,0 +1,12 @@
+
+@media only screen and (max-width: 700px) {
+    #slide1 {
+        content: url("https://reppsports.com/wp-content/uploads/2020/08/focus-mobile-1.jpg");
+    }
+    #slide2 {
+        content: url("https://reppsports.com/wp-content/uploads/2020/09/recov-mobile80.jpg");
+    }
+    #slide3 {
+        content: url("https://reppsports.com/wp-content/uploads/2020/10/HALLOWEENMobile-600x825-1.png");
+    }
+}

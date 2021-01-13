@@ -1,0 +1,117 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+    {{ include('slider.html') }}
+    {{ include('adbanner.html') }}
+
+    <div class="products">
+        <div class="product-wrap">
+            <div class="product-catalog">
+                <section class="regular sliderr">
+                    
+                    {% for product in products_bestseller %}
+                        {{ include('productslider.html', { 'id': product['id'],
+                        'title': product['name'],
+                        'image': product['image'],
+                        'price': product['price'] }) }}
+                    {% endfor %}
+
+                    
+                </section>
+            </div>
+            <div class="view-best-seller">
+                <div class="round-button">
+                    <p><span>view all</span></p>
+                    <p>best seller</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="products">
+        <div class="product-wrap">
+            <div class="product-catalog">
+                <section class="regular sliderr">
+                    
+                    {% for product in products_musclebuilding %}
+                        {{ include('productslider.html', { 'id': product['id'],
+                        'title': product['name'],
+                        'image': product['image'],
+                        'price': product['price'] }) }}
+                    {% endfor %}
+                    
+                </section>
+            </div>
+            <div class="view-best-seller">
+                <div class="round-button">
+                    <p><span>view all</span></p>
+                    <p>musclebuilding</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="product-wrap">
+            <div class="product-catalog">
+                <section class="regular sliderr">
+
+                    {% for product in products_apparel %}
+                        {{ include('productslider.html', { 'id': product['id'],
+                        'title': product['name'],
+                        'image': product['image'],
+                        'price': product['price'] }) }}
+                    {% endfor %}
+
+                </section>
+            </div>
+            <div class="view-best-seller">
+                <div class="round-button">
+                    <p><span>view all</span></p>
+                    <p>Apparel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- product slider -->
+    {% set blogs=[
+        {
+            'title': 'STIMULANTS CAUSING YOU TO LOSE GAINS – WHY PROPER SLEEP IS CRUCIAL',
+            'info': 'THE LOSS OF SLEEP CAN ACTUALLY CAUSE ADVERSE EFFECTS ON THE METABOLISM WHICH CAN LEAD TO EXCESS WEIGHT GAIN AND SOFTENED BODY COMPOSITION DUE TO THE HORMONAL IRREGULARITIES […]',
+            'image': 'https://reppsports.com/wp-content/uploads/2020/03/sleep-cnsjpg-678x324-1.jpg'
+        },
+            {
+            'title': 'NEW RAZE ENERGY DRINK FLAVOR REVEALED – COMING SOON',
+            'info': 'AFTER ALMOST A WEEK OF DELIBERATING AND SCAVENGING THROUGH COMMENTS AND DM’S, WE FINALLY HAD THE BIG WINNER. THE NEXT RAZE ENERGY FLAVOR IS BAJA LIME! […]',
+            'image': 'https://reppsports.com/wp-content/uploads/2020/03/baja-article3-678x368-1.jpg'
+        },	{
+            'title': 'REPP SPORTS RESPONSE TO COVID-19 AND UPDATES',
+            'info': 'LIKE YOU, ALL OF US HERE AT REPP SPORTS ARE CONSISTENTLY MONITORING THE EFFECTS OF COVID-19. WE WANTED TO SHARE AN UPDATE ON HOW WE ARE TAKING THE PROPER […]',
+            'image': 'https://reppsports.com/wp-content/uploads/2020/04/repp-covid2-678x362-1.jpg'
+        }
+    ] %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="news">
+                <p>New</p>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for blog in blogs %}
+                {{ include('blogs.html', { 'title': blog['title'],
+                'image': blog['image'],
+                'info': blog['info'] }) }}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    {{ include('grid.html') }}
+
+
+{% endblock %}

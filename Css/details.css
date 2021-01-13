@@ -1,0 +1,40 @@
+.fontstyle{
+	text-transform: uppercase;
+	font-family: myFirstFont;
+}
+.font-size{
+	font-size: 20px;
+}
+.btn-radius{
+	border-radius: 0px;
+}
+.bg-yellow{
+	background-color:#fff200;
+}
+.bg-black{
+	background-color:#222222;
+}
+.bg-black2{
+	background-color: #232323;
+}
+.bg-blackish{
+	background-color: #1d1d1d;
+}
+.color-y{
+	color: #fff200;
+}
+.color-w{
+	color:white;
+}
+.color-b{
+	color: #9999a6;
+}
+.color-bb{
+	color: #3a3a3a;
+}
+.color-blue{
+	color: #2352a6;
+}
+.textstyle{
+	text-align: center;
+}

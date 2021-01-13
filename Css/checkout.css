@@ -1,0 +1,212 @@
+.headerr{
+	background: #282828;
+	width: 100%;
+	height: 106px;
+}
+.checkout-page-logo{
+	width: 550px;
+	height: 49px;
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
+}
+.checkout-page-logo>img{
+	width: 200px;
+	height: 49px;
+}
+.header-text{
+	text-align: center;
+	margin-top: 10px;
+	color: white;
+}
+form{
+}
+.form-group>.email{
+	width: 616px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.name{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.Lastname{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.Lastname{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.street{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.apartment{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.city{
+	width: 301px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.gender{
+	width: 195.78px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.country{
+	width: 195.78px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.state{
+	width: 195.78px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.phone{
+	width: 616px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>.standard{
+	width: 616px;
+	height: 52px;
+	padding: 23px 12px 6px;
+	border-radius: 2px;
+	border:1px solid grey;
+}
+.form-group>a>.form-btn{
+	width: 554.39px;
+	height: 62px;
+	background: #159547;
+	color: white;
+	border-radius: 50px;
+	border:none;
+	position: relative;
+	left: 30px;
+
+}
+footer{
+	width: 100%;
+	height: 114px;
+	background: #1f1d27;
+	padding: 40px 40px 40px 40px;
+}
+.edit{
+	
+}
+@media screen and (max-width: 620px) {
+  		.checkout-page-logo{
+			width: 100%;
+			height: 49px;
+			display: flex;
+			justify-content: center;
+
+}
+.checkout-page-logo>img{
+	width: 200px;
+	height: 49px;
+}
+header{
+	background: #282828;
+	width: 100%;
+	height: auto;
+}
+.col-md-7{
+	width: 100%;
+}
+form{
+	width: 100%;
+}
+.form-group>.email{
+	width: 100%;
+}
+.form-group>.name{
+	width: 100%;
+
+}
+.form-group>.Lastname{
+	width: 100%;
+	margin-top: 2%;
+}
+.form-group>.Lastname{
+	width: 100%;
+}
+.form-group>.street{
+	width: 100%;
+
+}
+.form-group>.apartment{
+width: 100%;
+margin-top: 2%;
+}
+.form-group>.city{
+	width: 100%;
+}
+.form-group>.gender{
+	width: 100%;
+	margin-top: 2%;
+}
+.form-group>.country{
+	width: 100%;
+}
+.form-group>.state{
+	width: 100%;
+	margin-top: 2%;
+}
+.form-group>.phone{
+	width: 100%;
+}
+.form-group>.standard{
+	width: 100%;
+}
+.form-group>a>.form-btn{
+	width: 100%;
+
+}
+footer{
+	height: auto;
+}
+.form-group>a>.form-btn{
+	width: 100%;
+	height: 62px;
+	background: #159547;
+	color: white;
+	border-radius: 50px;
+	border:none;
+	margin-left: -22px;
+	
+
+}
+
+}

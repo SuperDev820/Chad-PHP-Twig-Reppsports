@@ -1,0 +1,543 @@
+{% extends 'master.twig' %}
+
+{% block custom_link %}
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" type="text/css" href="../Css/header.css">
+    <link rel="stylesheet" type="text/css" href="../Css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="../Css/productslider.css">
+    <link rel="stylesheet" type="text/css" href="../Css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../Css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="../Css/blog.css">
+    <link rel="stylesheet" type="text/css" href="../Css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../Css/textslider.css">
+    <link rel="stylesheet" type="text/css" href="../Css/terms.css">
+    <link rel="stylesheet" type="text/css" href="../Css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../Css/productdetail.css">
+    <link rel="stylesheet" type="text/css" href="../Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="../Css/mixed-check.css">
+    <link rel="stylesheet" type="text/css" href="../Css/checkout.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Track_Order_Page.css">
+    <link rel="stylesheet" type="text/css" href="../Css/myaccount.css">
+    <link rel="stylesheet" type="text/css" href="../Css/slider.css">
+
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript"
+        src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+    
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../plugin/js/hillRate-jquery.js"></script>
+    <script type="text/javascript" src="../Js/script.js"></script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+      
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        $(function() {
+            $('.rating-star-1').hillRate({
+                stars: 5,
+                valuesStar: [1, 2, 3, 4, 5]
+            });
+        });
+        
+
+    </script>
+
+    <script>
+        function imageClick(img){
+            var image_elements = document.getElementsByClassName("image-group");
+            var image_count = image_elements.length;
+            select_id = img.id;
+            console.log(select_id);
+            for(no = 1; no <= image_count; no++){
+                var image_element = document.getElementById("img"+no);
+                if(("img" + no) == select_id){
+                    image_element.className = "flex-active image-group";
+                    console.log(image_element.src);
+                    document.getElementById("front").style = "background-image: url("+image_element.src+");width:500%";
+                }
+                else {
+                    image_element.className = "image-group";
+                }
+            }
+        }
+
+        function minusBtnClick(){
+            quantity_element = document.getElementById("quantity");
+            if(quantity_element.value>1) {
+                quantity_element.value = quantity_element.value - 1;
+            }
+        }
+
+        function plusBtnClick(){
+            quantity_element = document.getElementById("quantity");
+            quantity_element.value = parseInt(quantity_element.value) + 1;
+        }
+
+        function quantityChange(){
+            quantity_element = document.getElementById("quantity");
+            quantity_element.value = parseInt(quantity_element.value);
+            if(quantity_element.value<1){
+                quantity_element.value =1;
+            }
+        }
+        
+        function yesBtnClick(event) {
+            review_id = event.target.id;
+            console.log(review_id);
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+            // Code inside here is executed each time the progress of the HTTP request advances.
+            // The current state can be retrieved via `this.readyState`, which returns a value ranging
+            // from 0 to 4 (inclusive).
+
+                if (this.readyState == 4) { // If the HTTP request has completed 
+                    if (this.status == 200) { // If the HTTP response code is 200 (e.g. successful)
+                        var response = this.responseText; // Retrieve the response text 
+                        console.log(response);
+                        elements = document.getElementsByClassName(review_id);
+                        elements[0].style.display = "none";
+                        elements[1].style.display = "none";
+                        element = document.getElementById('span'+review_id);
+                        element.innerHTML = "Thank you for your feedback!";
+                    };
+                };
+            };
+
+            xhr.open('GET', '/product/voteUpdate.php?review_id=' + review_id + "&action=yes");
+            xhr.send(null);
+
+        }
+
+        function noBtnClick(event) {
+            review_id = event.target.id;
+            console.log(review_id);
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+            // Code inside here is executed each time the progress of the HTTP request advances.
+            // The current state can be retrieved via `this.readyState`, which returns a value ranging
+            // from 0 to 4 (inclusive).
+
+                if (this.readyState == 4) { // If the HTTP request has completed 
+                    if (this.status == 200) { // If the HTTP response code is 200 (e.g. successful)
+                        var response = this.responseText; // Retrieve the response text 
+                        elements = document.getElementsByClassName(review_id);
+                        elements[0].style.display = "none";
+                        elements[1].style.display = "none";
+                        element = document.getElementById('span'+review_id);
+                        element.innerHTML = "Thank you for your feedback!";
+                    };
+                };
+            };
+
+            xhr.open('GET', '/product/voteUpdate.php?review_id=' + review_id + "&action=no");
+            xhr.send(null);
+
+        }
+        function VariationUpdate() {
+            select_count = document.getElementById("select_count").value;
+            product_id = document.getElementById("product_id").value;
+            variant_id_array = []
+            console.log(select_count);
+            for($no=1;$no<=select_count;$no++){
+                console.log(document.getElementById("select"+$no));
+                variant_id_array[$no] = document.getElementById("select"+$no).value;
+            }            
+
+            variant_id1 = variant_id_array[1];
+            if(select_count == 1){
+                variant_id2 = "none";
+            }
+            else{
+                variant_id2 = variant_id_array[2];
+            }
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+            // Code inside here is executed each time the progress of the HTTP request advances.
+            // The current state can be retrieved via `this.readyState`, which returns a value ranging
+            // from 0 to 4 (inclusive).
+
+                if (this.readyState == 4) { // If the HTTP request has completed 
+                    if (this.status == 200) { // If the HTTP response code is 200 (e.g. successful)
+                        var response = this.responseText; // Retrieve the response text 
+                        console.log("response: " + response);
+                        variant_info = JSON.parse(response);
+
+                        if(variant_info.image_url != ""){
+                            document.getElementById("img1").src = variant_info.image_url;
+                            document.getElementById("front").style = "background-image: url("+variant_info.image_url+");width:500%";
+                            var img = {id: 1};
+                            imageClick(img);
+                            document.getElementById("img1").className = "flex-active image-group";
+                            document.getElementById("variant_price").innerText = "$" + variant_info.price;
+                        }
+                    };
+                };
+            };
+
+            xhr.open('GET', '/imageUpdate.php?id='+product_id+'&id1='+variant_id1+"&id2="+variant_id2, 'true');
+            xhr.send(null);
+        }
+
+    </script>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Row -->
+        <div class="row" style="margin-top: 4%">
+
+            <div class="col-md-6 col-display">
+                <ol class="flex-control-nav flex-control-thumbs" style="max-height: 498px; overflow: hidden auto;">
+                    {% for img in images %}
+    
+                        {% if img.id == 1 %}
+                            <li><img src="{{img.url}}" style="width:108; height:108; margin-top:20px" class="flex-active image-group" id="img{{img.id}}" onclick="imageClick(this)"></li>
+                        {% else %}
+                            <li><img src="{{img.url}}" style="width:108; height:108; margin-top:20px" class="image-group" id="img{{img.id}}" onclick="imageClick(this)"></li>
+                        {% endif %}
+    
+                    {% endfor %}
+                </ol>
+                <div class="front" id="front" style="background-image: url({{images[0].url}});width:500%">
+                </div>    
+            </div>
+
+            <div class="col-md-6">
+                <div class="product-summary">
+                    <h3 class="pro-detail">{{product_name}}</h3>
+                    <div>
+                        <div class="customer-review">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><a href="#" class="fontstyle">69 (customer reviews)</a></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 fontstyle">
+                            <div class="woocommerce-product-details__short-description">
+                                {{product_detail[0] | raw }}
+                                <p>Want to Try it First? <span style="text-decoration: underline;"><strong>
+                                    <a title="Find RAZE Energy Near You - RAZE Store Locator" href="https://reppsports.com/store-locator" target="_blank" rel="noopener noreferrer">Click Here to Find RAZE Near You</a></strong></span>
+                                </p>
+                                <p>
+                                {{product_detail[1] | raw }}
+                                </p>
+                            </div>
+                            <p class="fontstyle color-bb price" id="price">{{ product_price }}</p>
+
+                        </div>
+                    </div>
+
+                    <form method="post" action="/add-to-cart.php">
+                        {% if product_type == "VARIABLE" %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="select_count" id="select_count" value="{{variants|length}}" hidden></input>
+                                        {% for variant_item in variants %}
+                                            <select name="select{{variant_item.no}}" id="select{{variant_item.no}}" class="dropdown-width bg-blackish color-y" onchange="VariationUpdate()">
+                                            {% for variant in variant_item.content %}
+                                                <option value="{{variant['product_variants_id']}}" data-priority="{{variant['priority']}}">{{variant['name']}}</option>
+                                                <!-- <option value="{{v['product_variants_id']}}" data-priority="{{v['priority']}}" data-image="{{v['image']}}">{{v['name']}}</option> -->
+                                            {% endfor %}
+                                            </select> 
+                                        {% endfor %}
+                                        <p id="selectedSku"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="row mt-2">
+                            <div id="variant_price" class="col-md-12" style="font-size:23px">
+                                ${{variants[0].variant_price}}
+                            </div>
+                            <div class="col-md-12">
+                                <b>Availability:</b> In stock
+                            </div>
+                        </div>
+
+                        <input type="text" name="product_id" id="product_id" value="{{product_id}}" hidden>
+                        <div class="row mt-2">
+                            <div class="col-md-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="input-group">
+                                            <span class="input-group-btn ">
+                                                <button type="button" class="btn bg-black btn-number btn-radius h-100" data-type="minus"
+                                                data-field="quant[2]" onclick="minusBtnClick()">
+                                                    <span class="fa fa-minus color-y "></span>
+                                                </button>
+                                            </span>
+                                            
+                                            <input type="text" name="quantity" id="quantity" class="form-control input-number bg-black color-y border-0 fontstyle text-center" value="1" onchange="quantityChange()">
+
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn bg-black btn-number btn-radius h-100" data-type="plus"
+                                                data-field="quant[2]" onclick="plusBtnClick()">
+                                                    <span class="fa fa-plus color-y"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn bg-yellow fontstyle dropdown-width font-size">add to cart</button>
+                            </div>
+                        </div>    
+                    </form>
+                    
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <ul id="tabs" class="nav nav-tabs">
+                    <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link btn fontstyle color-bb btn-font-size">Description</a></li>
+                    <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link  bg-black color-y fontstyle  border btn-font-size">Write a Review</a></li>
+
+                </ul>
+                <!--  -->
+                <div id="tabsContent" class="tab-content">
+                    <div id="home1" class="tab-pane fade active show">
+                        <img class="img-fluid" src="https://reppsports.com/wp-content/uploads/2020/05/raze-hero.png"><br>
+                        <img class="img-fluid" src="/Images/cardfooter.JPG">
+                    </div>
+                    <div id="profile1" class="tab-pane fade">
+                        <div class="row pb-2">
+                            <div class="col-md-7">
+                                <img class="img-fluid mt-3" src="/Images/review-raze.PNG">
+                                <div class="review_area">
+                                    {% for review in review_array %}
+                                        <span id="span{{review.review_id}}" style="font-size:14px">
+                                            {% if review.vote > 0 %}
+                                                {{review.helpfulvote}} out of {{review.vote}} people found this helpful. 
+                                            {% endif %}
+                                            Was this review helpful to you?
+                                        </span>
+                                        <button class="{{review.review_id}}" id="{{review.review_id}}" onclick="yesBtnClick(event)">Yes</button>
+                                        <button class="{{review.review_id}}" id="{{review.review_id}}"onclick="noBtnClick(event)">No</button>
+                                        <div class="seanflim">
+                                            <p style="font-size:15px;margin-top:10px;margin-bottom: 0">{{review.review_name}} – {{review.review_date}}</p>
+                                        </div>
+                                        <div class="rating_p">
+                                            {% for image_url in review.rating_star_array %}
+                                                <img data-id="1" class="item-rate"src="{{image_url}}">
+                                            {% endfor %}
+                                            <p class="mt-2" style="font-size:17px">{{review.review_description}}</p>
+                                            {% if review.image_array|length > 0 %}
+                                            <p>Uploaded image(s):</p>
+                                            <div class="row" style="margin-bottom:20px">
+                                                {% for image_url in review.image_array %}
+                                                <div class="col-md-4"><img src="../product/{{image_url}}" alt="Image #1 from thecalcio91" style="width:150px;"></div>
+                                                {% endfor %}
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-5">
+                                <div class="Add_Review_Form p-3 mt-3">
+                                    <div class="Add_Head">
+                                        <h3>ADD A REVIEW</h3>
+                                        <p>Your email address will not be published. Required fields are marked *</p>
+                                    </div>
+                                    <div class="Your_Rating mt-2">
+                                        <h3>Your rating</h3>
+                                        
+                                        <form method="post" action="/product/review.php" enctype="multipart/form-data">
+                                            <input type="text" name="product_id" value="{{product_id}}" hidden>
+                                            <div class="rating-star-1"></div>
+                                            <textarea rows="4" name="description" class="review-content"></textarea>
+                                            <div class="fileUpload">
+                                                <input type="file" name="imagesUpload[]" multiple="multiple">
+                                            </div>
+                                            <br>
+                                            <br>
+                                            <label>Name*</label>
+                                            <input type="text" name="name">
+                                            <br>
+                                            <br>
+                                            <label>Email*</label>
+                                            <input type="text" name="email">
+                                            <div class="last_part mt-3">
+                                                <p>Please enter an answer in digits:</p>
+                                                <span>{{robotCheck.question}}</span>
+                                                <input type="text" name="answerInput">
+                                                <input type="text" name="answer" value="{{robotCheck.answer}}" hidden>
+                                            </div>
+                                            <div class="Submit_Button mt-4">
+                                                <button>Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Related Projects Row -->
+        <div class="row bg-black mt-3">
+            <div class="col-md-12">
+                <h1 class="color-w fontstyle text-center">relate product</h1>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col-md-4 col-sm-6 mb-4">
+
+                <div class="card border-0">
+                    <img class="card-img-top" src="https://reppsports.com/wp-content/uploads/2020/02/hypercinnamon-sample-500x583-1.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h6 class="fontstyle color-b">all</h6>
+                        <h5 class="card-title fontstyle color-blue">HYPER SLEEP SINGLE SERVING</h5>
+                        <p class="card-text">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </p>
+                        <p>$1.99</p>
+
+                        <a href="#" class="btn btn-radius bg-black color-w fontstyle w-50">add to cart</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card border-0">
+                    <img class="card-img-top" src="https://reppsports.com/wp-content/uploads/2020/02/hypercinnamon-sample-500x583-1.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h6 class="fontstyle color-b ">all</h6>
+                        <h5 class="card-title fontstyle color-blue">HYPER SLEEP SINGLE SERVING</h5>
+                        <p class="card-text">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </p>
+                        <p>$1.99</p>
+
+                        <a href="#" class="btn btn-radius bg-black color-w fontstyle w-50">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 mb-4">
+                <div class="card border-0">
+                    <img class="card-img-top" src="https://reppsports.com/wp-content/uploads/2020/02/hypercinnamon-sample-500x583-1.png" alt="Card image cap">
+                    <div class="card-body text-center">
+                        <h6 class="fontstyle color-b">all</h6>
+                        <h5 class="card-title fontstyle color-blue">HYPER SLEEP SINGLE SERVING</h5>
+                        <p class="card-text">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </p>
+                        <p>$1.99</p>
+
+                        <a href="#" class="btn btn-radius bg-black color-w fontstyle w-50">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <style>
+        h3 {
+            text-align: left;
+        }
+        div {
+            text-align: left!important;
+        }
+        ol.flex-control-nav.flex-control-thumbs li img{
+            cursor: pointer;
+            opacity: .5;
+        }
+        ol.flex-control-nav.flex-control-thumbs li img.flex-active {
+            opacity: 1 !important;
+        }
+        ol.flex-control-nav.flex-control-thumbs::-webkit-scrollbar {
+            overflow: hidden !important;
+        }
+        ol.flex-control-nav.flex-control-thumbs li img:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+        .item-rate {
+            width: 25px;
+            height: 25px;
+        }
+        .fileUpload {
+            margin-top: 20px;
+        }
+        .review-content {
+            height: 80px!important;
+            width: 200px!important;
+        }
+        body { background-color: #fafafa; font: 'Quicksand'; }
+            h1,h2{
+                text-align: center;
+            }
+            div{
+                text-align: center;
+            }
+            hr{
+                margin: 50px 0;
+            }
+            p{
+                font-size: 30px;
+            }
+            .col-2{
+                float:left;
+                width: 50%;
+            }
+    </style>
+
+
+{% endblock %}
+
+
+

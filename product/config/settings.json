@@ -1,0 +1,40 @@
+{
+    "checkout_info": {
+        "header_contents": "LOW STOCK. Sell-out Risk: HIGH",
+        "description": "You’re going to LOVE our newest flavor of Broken Arrow!  Act now so you don’t miss out on experiencing the best pre-workout in the world!",
+        "product_picture": "https://reppsports.com/wp-content/uploads/2020/03/4pack-cans-chkout-354x498-1.jpg",
+        "user_review_picture": "/Images/bigimage1.JPG",
+        "faq": [
+            {
+                "question": "What makes Broken Arrow better than anything else out there?",
+                "answer": "Broken Arrow is one of the strongest, most fully stacked products on the market today. With over 14+ grams of active ingredients we pack as much clinically dosed, high octane, pump inducing components as possible. On top of this our flavors are, bar none, the best in the game."
+            },
+            {
+                "question": "Is there any membership, subscription, or other funny business?",
+                "answer": "No. We do not rely on sneaky business tactics to sell our products. We know for a fact you will be back for more, so we have no need to lock you into a membership or anything like that."
+            },
+            {
+                "question": "How does Broken Arrow Taste?",
+                "answer": "Incredible 😍"
+            },
+            {
+                "question": "How many calories, carbs, and sugar is in Broken Arrow?",
+                "answer": "Zero. Zilch. Nada. None."
+            },
+            {
+                "question": "​Is this pre-workout too strong for me?",
+                "answer": "We always suggest starting with a half dose, just to be safe. Due to the engulfing energy contained within a single serving, Broken Arrow™ is only recommended for advanced stimulant users. Under no circumstances should more than 1 serving be consumed in any 24-hour period- and that means no heaping scoops either, we don’t care how tough you think you are. Don’t say we didn’t warn you."
+            }
+        ]
+    },
+    "upsell": {
+        "product": 13,
+        "upsell1": 12,
+        "upsell2": 11,
+        "orderbump": 10
+    },
+    "button_text": {
+        "tab1": "GO TO STEP 2 → ",
+        "tab2": "SHIP MY FOCUS SAMPLE → "
+    }
+}

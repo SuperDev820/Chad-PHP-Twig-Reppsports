@@ -1,0 +1,64 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="./Css/header.css">
+    <link rel="stylesheet" type="text/css" href="./Css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="./Css/productslider.css">
+    <link rel="stylesheet" type="text/css" href="./Css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./Css/footer.css">
+    <link rel="stylesheet" type="text/css" href="./Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="./Css/blog.css">
+    <link rel="stylesheet" type="text/css" href="./Css/grid.css">
+    <link rel="stylesheet" type="text/css" href="./Css/textslider.css">
+    <link rel="stylesheet" type="text/css" href="./Css/terms.css">
+    <link rel="stylesheet" type="text/css" href="./Css/cart.css">
+    <link rel="stylesheet" type="text/css" href="./Css/productdetail.css">
+    <link rel="stylesheet" type="text/css" href="./Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="./Css/mixed-check.css">
+    <link rel="stylesheet" type="text/css" href="./Css/checkout.css">
+    <link rel="stylesheet" type="text/css" href="./Css/Track_Order_Page.css">
+    <link rel="stylesheet" type="text/css" href="./Css/myaccount.css">
+    <link rel="stylesheet" type="text/css" href="./Css/slider.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    {% block custom_link %}{% endblock %}
+    <style type="text/css">
+        @media screen and (max-width: 620px) {
+            .product-wrap {
+                display: flex;
+                flex-direction: column;
+            }
+            .most-popular {
+                display: block;
+            }
+            .round-button {
+                display: none;
+            }
+            /*.products{*/
+            /*	display: none;*/
+            /*}*/
+            .abc {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {{ include('header.html', { 'p': 'RAZE Focus Now Available - Shop Now!',
+    'pp': 'Test PRO Now Available', 
+    'p2': 'TRACK MY ORDER',
+    'btn': 'MEMBERLOGIN',
+    'userimage': 'fa fa-user',
+    'logo': 'https://reppsports.com/wp-content/uploads/2020/08/REPP_SPORTS-svg.svg',
+    'items': items }) }}
+
+    {% block content %}{% endblock %}
+
+    {{ include('footer.html') }}
+    {{ include('scripts.html') }}
+</body>

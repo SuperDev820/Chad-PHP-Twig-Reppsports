@@ -1,0 +1,61 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/oswald.bold.ttf);
+}
+@font-face {
+  font-family: oswaldregular;
+  src: url(../Fonts/oswald.regular.ttf);
+}
+@font-face {
+  font-family: helvetica;
+  src: url(../Fonts/HelveticaLt.ttf);
+}
+@font-face {
+  font-family: helveticaNue;
+  src: url(../Fonts/HelveticaNeueMedium.ttf);
+}
+@font-face {
+  font-family: opensan;
+  src: url(../Fonts/open-sans.light.ttf);
+}
+@font-face {
+  font-family: roboto;
+  src: url(../Fonts/roboto.thin.ttf);
+}
+/*h3{
+	font-size: 36px;
+}
+h2{
+	color: #808080;
+
+}h5{
+	font-size: 18.75px;
+	color: #808080;
+}
+p{
+	font-size: 14px;
+	font-family: myFirst;
+	font-weight: 600;
+}*/
+.t-S{
+	font-size: 36px;
+	font-family: oswaldregular;
+	font-weight: 100;
+}
+.t_s1{
+	font-size: 25px;
+	font-family: helveticaNue;
+	color: #808080;
+
+}
+.t_s2{
+	font-size:18.75px;
+	font-family: helvetica;
+	color: #a1a1a1;
+}
+.t_s3{
+	font-size:14px;
+	font-family: roboto;
+	font-weight: 900;
+	color: #808080;
+}

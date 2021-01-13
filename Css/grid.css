@@ -1,0 +1,20 @@
+.find_us_on_instagram{
+	width: 210px;
+	height: 100px;
+	background: #1D1D1D;
+	text-transform: uppercase;
+	font-size: 30px;
+	color: #FFF600;
+	text-align: center;
+}
+@media screen and (max-width: 620px) {
+  		.find_us_on_instagram{
+	width: 150px;
+	height: 66px;
+	background: #1D1D1D;
+	text-transform: uppercase;
+	font-size: 20px;
+	color: #FFF600;
+	text-align: center;
+}
+}

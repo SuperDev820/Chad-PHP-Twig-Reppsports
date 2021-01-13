@@ -1,0 +1,13 @@
+{
+    "category": {
+        "bestseller": {
+                "id": [1, 2, 3]
+        },
+        "musclebuilding": {
+            "id": [4, 5, 6]
+        },
+        "apparel": {
+            "id": [9, 10, 11]
+        }
+    }
+}

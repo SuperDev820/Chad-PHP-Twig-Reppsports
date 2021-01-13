@@ -1,0 +1,108 @@
+<header>
+  <div class="flex-container">
+    <div class="flex-row">
+      <div class="top_bar">
+        <div class="s-wrap">
+            <div class="s-move">
+              <div class="slidee">
+                <p>{{p}}</p>
+              </div>
+              <div class="slidee">
+                <p>{{pp}}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="main_header">
+        <div class="main_header_wrap">
+          <div class="spacing">
+            <div class="logo_area"></div>
+          </div>
+          <div class="search_area">
+            <div class="member_login">
+              <div class="track_my_order">
+                <p><a href="/shipment-tracking.php">track my order</a></p>
+              </div>
+              <div class="member_login_btn">
+              <button><i class="far fa-user"></i><a href="/my-account.php">member login</a></button>
+              </div>
+            </div>
+            <div class="search_box">
+              <div class="cart_icon">
+                 <p>0</p>
+                  <a href="/cart.php"><img src="https://reppsports.com/wp-content/uploads/2020/02/carticon.svg"></a>
+              </div>
+              <div class="search_input">
+                <div class="input_button_group">
+                  <input type="text" name="search" placeholder="Search here...">
+                  <button><i class="fa fa-search"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="mobile-header-wrap">
+          <div class="mobile-nav">
+            <i class="fa fa-bars" data-toggle="collapse" data-target="#navbarNavDropdown"></i>
+          </div>
+          <div class="mobile-search">
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="mobile-logo">
+            
+          </div>
+          <div class="mobile-trak-order">
+            <div class="track-order">
+              <p><a href="#">track order</a></p>
+            </div>
+            <div class="cart-login-icons">
+              <div class="cart-img">
+                <img src="https://reppsports.com/wp-content/uploads/2020/02/carticon.svg">
+              </div>
+              <div class="user-login">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--  -->
+      </div>
+      <!--<div class="flex_nav">-->
+          <nav class="navbar navbar-expand-lg bg-dark">
+            <!--<button class="navbar-toggler" type="button" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+            <!--  <span class="navbar-toggler-icon"></span>-->
+            <!--</button>-->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                  {% for item in items %}
+                  
+                    <li class="nav-item {{ item.sub_menu ? 'dropdown' : '' }}">
+                      <a class="nav-link {{ item.sub_menu ? 'dropdown-toggle' : '' }}" href="{{ item.sub_menu ? '#' : item['href']}}" {{ item.sub_menu ? 'data-toggle="dropdown"' : ''}}>{{item['title']}}<span
+            class="sr-only">(current)</span></a> {% if item.sub_menu %}
+                      <div class="dropdown-menu">
+                          {% for si in item.sub_menu %}
+                          <div class="dropdown-item">
+                              <a class="nav-link" href="{{si['href']}}">{{si['title']}}</a> {% if si.sub_menu %}
+                              <ul class="sub-menu">
+                                  {% for sub_sub_menu in si.sub_menu %}
+                                  <li><a class="nav-link" href="{{sub_sub_menu.href}}">{{sub_sub_menu.title}}</a></li>
+                                  {% endfor %}
+                              </ul>
+                              {% endif %}
+                          </div>
+                          {% endfor %}
+                      </div>
+                      {% endif %}
+                  </li>
+
+                  {% endfor %}
+              </ul>
+            </div>
+          </nav>
+      <!--</div>-->
+    </div>
+  </div>
+</header>

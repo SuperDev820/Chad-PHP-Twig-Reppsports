@@ -1,0 +1,55 @@
+{% extends 'master.twig' %}
+{% block custom_link %}
+
+    <link rel="stylesheet" type="text/css" href="../Css/header.css">
+    <link rel="stylesheet" type="text/css" href="../Css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="../Css/productslider.css">
+    <link rel="stylesheet" type="text/css" href="../Css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../Css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="../Css/blog.css">
+    <link rel="stylesheet" type="text/css" href="../Css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../Css/textslider.css">
+    <link rel="stylesheet" type="text/css" href="../Css/terms.css">
+    <link rel="stylesheet" type="text/css" href="../Css/cart.css">
+    <link rel="stylesheet" type="text/css" href="../Css/productdetail.css">
+    <link rel="stylesheet" type="text/css" href="../Css/shop.css">
+    <link rel="stylesheet" type="text/css" href="../Css/mixed-check.css">
+    <link rel="stylesheet" type="text/css" href="../Css/checkout.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Track_Order_Page.css">
+    <link rel="stylesheet" type="text/css" href="../Css/myaccount.css">
+    <link rel="stylesheet" type="text/css" href="../Css/slider.css">
+
+
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="select-box">
+                <select>
+                    <option>Default sorting</option>
+                    <option>Sort bt popularity</option>
+                </select>
+            </div>
+        </div>
+        <div class='container'>
+            <div class='row'>
+
+                {% for product in products %}
+                    {{ include('products_cat_grid.html', { 
+                        'id': product['id'],
+                        'title': product['name'],
+                        'image': product['image'],
+                        'price': product['price'],
+                        'url': product['url'] }) 
+                    }}
+                {% endfor %}
+
+            </div>
+        </div>
+	</div>
+	<br><br>
+
+{% endblock %}
+

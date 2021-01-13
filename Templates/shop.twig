@@ -1,0 +1,32 @@
+{% extends 'master.twig' %}
+
+{% block content %}
+
+    <div class="container">
+	<div class="row">
+		<div class="select-box">
+			<select>
+				<option>Default sorting</option>
+				<option>Sort bt popularity</option>
+			</select>
+		</div>
+	</div>
+    <div class='container'>
+        <div class='row'>
+
+            {% for product in products %}
+                {{ include('productsgrid.html', { 
+                    'id': product['id'],
+                    'title': product['name'],
+                    'image': product['image'],
+                    'price': product['price'] }) 
+                }}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+<br><br>
+
+{% endblock %}
+

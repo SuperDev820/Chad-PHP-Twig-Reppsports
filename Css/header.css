@@ -1,0 +1,263 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/bdhanoverblack.ttf);
+}
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing: border-box;
+	font-family: myFirstFont;
+}
+/*text slider*/
+header{
+	width: 100%;
+}
+.flex-container{
+	display: flex;
+	flex-direction: column; 
+}
+.top_bar{
+	width: 100%;
+	height: 50px;
+	background-color: #fff200;
+}
+.main_header{
+	width: 100%;
+	height: 95.8px;
+	background-color: #222222;
+}
+.flex_nav{
+	height: 60px;
+	width: 100%;
+	background-color: #1d1d1d;
+}
+.main_header_wrap{
+	width: 100%;
+	max-width: 1160px;
+	margin:0 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	
+}
+.spacing{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 335.125px;
+}
+.logo_area{
+	background-image: url(https://reppsports.com/wp-content/uploads/2020/08/REPP_SPORTS-svg.svg);
+	background-repeat: no-repeat;
+	width: 335.125px;
+	height: 55.281px;	
+}
+.clear{
+	clear: both;
+}
+.search_area{
+	/*background-color: yellow;*/
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	padding-top: 8px;
+	
+	/*background-color: blue;*/
+
+}
+.member_login{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 290px;
+	margin-left: auto;
+	
+}
+.track_my_order{
+	width: 210px;
+	
+
+}
+.track_my_order>p>a{
+	color: #fff200;
+	text-transform: uppercase;
+	font-size: 17px;
+	text-decoration: none;
+}
+.track_my_order>p>a:hover{
+	text-decoration: underline;
+}
+.member_login_btn>button{
+	width: 120.5px;
+	height: 30px;
+	border-radius: 5px;
+	border:none;
+	background-color: #fff200;
+	position: relative;
+	top: -6px;
+}
+.member_login_btn>button>a{
+	width: 79.53px;
+	height: 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: black;
+	font-size: 10px;
+}
+.member_login_btn>button>a{
+	width: 12.500px;
+	height: 12;
+	padding: 0px 2px 0px 5px;
+	font-size: 10px;
+
+}
+.member_login_btn>button>a:hover{
+	text-decoration: underline;
+}
+
+.search_box{
+	/*background-color: white;*/
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	
+}
+.cart_icon{
+	display: flex;
+	flex-direction: row;
+	width: 70.69px;
+}
+.cart_icon>p{
+	font-size: 16px;
+	font-family: myFirstFont;
+	color: #fff200;
+	padding: 4px 8px;
+}
+.cart_icon>a>img{
+	width: 31px;
+	height: 31px;
+	font-size: 16px;
+	font-family: myFirstFont;
+	color: #fff200;
+	background-repeat: no-repeat;
+}
+.search_input{
+	width: 290.13px;
+	height: 36px;
+}
+.input_button_group>input{
+	width: 247.13px;
+	height: 36px;
+	padding: 0px 12px;
+}
+.input_button_group>button{
+	width: 36px;
+	height: 36px;
+	border:none;
+	background: #fff100;
+	position: relative;
+	right: 3px;
+	bottom: 1px;
+}
+.mobile-header-wrap{
+	display: none;
+}
+
+@media screen and (max-width: 620px) {
+   .main_header_wrap{
+   	display: none;
+   }
+   .flex_nav{
+   	display: none;
+   }
+   .main_header{
+   	height: 124px;
+   }
+   .mobile-header-wrap{
+	display: block;
+	width: 100%;
+	max-width: 450px;
+	margin:auto;
+	
+	}
+	.mobile-header-wrap{
+		display: flex;
+		flex-direction: row;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.mobile-nav{
+				width: 100%;
+				max-width: 70px;
+				
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+	}
+	.mobile-nav>i{
+		font-size: 30px;
+		color: #fff200;
+	}
+	.mobile-search{
+		width: 100%;
+		max-width: 70px;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.mobile-search>i{
+		font-size:30px;
+		color: #fff200;
+	}	
+	.mobile-logo{
+		background: url(https://reppsports.com/wp-content/uploads/2020/02/Raze-Logo_R-Only.svg);
+		background-repeat: no-repeat;
+		height: 110px;
+		width: 100%;
+		position: relative;
+		top: 5px;
+		left: 5px;
+	}
+	.mobile-trak-order{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 125.13px;
+		justify-content: center;
+		
+	}
+	.track-order{
+
+	}
+	.track-order>p>a{
+		text-transform: uppercase;
+		color: #fff200;
+		font-family: myFirstFont; 
+		position: relative;
+		text-decoration: none;
+		left: 10px;
+		font-size: 14px;
+		text-align: center;
+	}
+	.track-order>p>a:hover{
+		text-decoration: underline;
+	}
+	.cart-login-icons{
+		display: flex;
+		flex-direction: row;
+		margin-top: 15px;
+	}
+	.cart-img{
+		width: 80px;
+
+	}
+	.cart-img>img{
+		height: 30px;
+		width: 30px;
+	}
+	.user-login>i{
+		font-size: 25px;
+		color: #fff200;
+	}
+}
+

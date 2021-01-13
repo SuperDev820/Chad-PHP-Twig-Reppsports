@@ -1,0 +1,26 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../Fonts/bdhanoverblack.ttf);
+}
+.fontstyle{
+	font-family: myFirstFont;
+	text-transform: uppercase; 
+}
+.bg-black{
+	background: black;
+	color: white;
+}
+.bg-yellow{
+	background: #ffc439;
+}
+@media screen and (max-width: 620px){
+	.table-responsive {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #DDD;
+    }
+}
